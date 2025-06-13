@@ -10,10 +10,10 @@ urlpatterns = [
     path('public/', public_api),
     path('protected/', protected_api),
 
-    # ✅ JWT login renamed to /login/
+   
     path('login/', TokenObtainPairView.as_view(), name='login'),
 
-    # ✅ JWT token refresh
+
     path('login/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
    
 

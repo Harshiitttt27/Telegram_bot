@@ -4,15 +4,14 @@ from core.models import TelegramUser
 from django.conf import settings
 from asgiref.sync import sync_to_async
 
-from core.tasks import send_welcome_email  # ✅ import Celery task
 
 from core.tasks import send_welcome_email
-from asgiref.sync import sync_to_async
+
 
 @sync_to_async
 def save_user_and_email(username):
     TelegramUser.objects.get_or_create(username=username)
-    send_welcome_email.delay(username, 'test@example.com')  # ✅ replace with real email if needed
+    send_welcome_email.delay(username, 'test@example.com')  # Replace with actual email 
 
 async def start(update, context):
     username = update.effective_user.username
@@ -28,7 +27,7 @@ class Command(BaseCommand):
     help = 'Run the Telegram bot and listen for /start'
 
     def handle(self, *args, **kwargs):
-        print("🤖 Telegram Bot is polling...")
+        print(" Telegram Bot is polling...")
 
         app = ApplicationBuilder().token(settings.TELEGRAM_BOT_TOKEN).build()
         app.add_handler(CommandHandler("start", start))

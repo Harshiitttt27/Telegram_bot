@@ -1,6 +1,6 @@
-# Django Internship Assignment
+# Django telegram bot 
 
-This is a Django-based backend project completed as part of an internship assignment. It includes API development using Django REST Framework, authentication, Celery for background tasks, Redis, and Telegram bot integration.
+This is a Django-based backend project completed . It includes API development using Django REST Framework, authentication, Celery for background tasks, Redis, and Telegram bot integration.
 
 ---
 ## 🛠 Tech Stack
